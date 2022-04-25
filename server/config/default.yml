@@ -1,0 +1,15 @@
+server:
+  port: 4000
+
+db:
+  type: 'mysql'
+  port: 3306
+  database: 'immiworld'
+
+jwt:
+  expiresIn: 3600
+  secret: 'topSecret51'
+
+web:
+  staticPath: 'http://localhost:4000'
+  pageSize: 20

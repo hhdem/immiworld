@@ -1,0 +1,10 @@
+db:
+  host: 'localhost'
+  username: 'root'
+  password: ''
+  synchronize: false
+  logging: 'all'
+  logger: 'simple-console'
+
+jwt:
+  secret: 'topSecret51'

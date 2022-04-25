@@ -1,0 +1,26 @@
+{
+  "name": "immiworld",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hhdem/immiworld.git"
+  },
+  "keywords": [
+    "node-cms",
+    "nest-cms",
+    "nuxt",
+    "vue",
+    "admin-template",
+    "management-system"
+  ],
+  "author": "Luke <liubingchina@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/hhdem/immiworld/issues"
+  },
+  "homepage": "https://github.com/hhdem/immiworld#readme"
+}

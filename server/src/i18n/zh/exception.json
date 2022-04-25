@@ -1,0 +1,5 @@
+{
+  "USERNAME_ALREADY_EXISTS": "用户名已经存在.",
+  "INVALIDE_CREDENTIALS": "鉴权失败.",
+  "INTERNAL_SERVER_ERROR": "系统内部错误."
+}
