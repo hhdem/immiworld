@@ -28,7 +28,7 @@ export interface AuthenticationPayload {
 export class AuthController {
   constructor(private authService: AuthService, private tokenService: TokensService) {}
 
-  @ApiOperation({ summary: '注册成功' })
+  @ApiOperation({ summary: '用户注册' })
   @Post('/signup')
   @HttpProcessor.success('注册成功', 200)
   @HttpProcessor.handle({ message: '注册', error: HttpStatus.BAD_REQUEST })
@@ -58,6 +58,7 @@ export class AuthController {
     return true;
   }
 
+  
   @ApiOperation({ summary: '刷新Token' })
   @Post('/refresh')
   async refresh(@Body() body: RefreshToken): Promise<any> {

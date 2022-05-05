@@ -96,4 +96,15 @@ export class UserRepository extends Repository<User> {
       return null;
     }
   }
+
+  async getOneByEmail(email: string) {
+    const query = this.createQueryBuilder('user');
+    if (email) {
+      query.andWhere('user.profile.email = :email', { email });
+      const user = await query.getOne();
+      return user;
+    } else {
+      return null;
+    }
+  }
 }

@@ -82,6 +82,8 @@ export class AdminController {
     return await this.adminService.updateUserStatus(id, status);
   }
 
+  @ApiOperation({ summary: '用户列表' })
+  @ApiBearerAuth('authorization')
   @Get('/users')
   @UseGuards(AuthGuard(), RolesGuard)
   @Roles(UserRole.EDITOR, UserRole.ADMIN, UserRole.SUPERADMIN)

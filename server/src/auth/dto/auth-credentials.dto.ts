@@ -33,6 +33,7 @@ export class AuthCredentialsDto {
 }
 
 export class RefreshToken {
+  @ApiProperty()
   @IsString()
   refresh_token: string;
 }

@@ -1,0 +1,12 @@
+{
+    "name": "admin",
+    "scripts": {
+      "dev": "nuxt",
+      "build": "nuxt build",
+      "generate": "nuxt generate",
+      "start": "nuxt start"
+    },
+    "dependencies": {
+
+    }
+  }

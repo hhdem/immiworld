@@ -13,3 +13,9 @@ jwt:
 web:
   staticPath: 'http://localhost:4000'
   pageSize: 20
+
+email:
+  host: 'smtp.gmail.com'
+  port: 465
+  auth_user: 'immiworld@gmail.com'
+  auth_pass: 'tdwbmumfsmeckhnf1'

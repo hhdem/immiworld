@@ -23,7 +23,10 @@ import { UploadService } from '../file/upload.service';
 import { Any } from 'typeorm';
 import { AnyAuthGuard } from './guards/any-auth.guard';
 import { UserOnlineService } from './user-online.service';
+import { ApiBearerAuth, ApiBody, ApiConsumes, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { EmailStatus } from './auth.enum';
 
+  @ApiTags('用户')
   @Controller('user')
   export class UserController {
     constructor(
@@ -32,6 +35,7 @@ import { UserOnlineService } from './user-online.service';
         private uploadService: UploadService
     ) {}
 
+    @ApiOperation({ summary: '根据ID获取用户信息' })
     @Get('/:id/info')
     // @UseGuards(AuthGuard())
     async infoById(
@@ -45,6 +49,8 @@ import { UserOnlineService } from './user-online.service';
         return structured;
     }
 
+    @ApiOperation({ summary: '获取当前登录用户信息' })
+    @ApiBearerAuth('authorization')
     @Get('/info')
     @UseGuards(AuthGuard())
     async info(
@@ -70,6 +76,8 @@ import { UserOnlineService } from './user-online.service';
         return structured;
     }
 
+    @ApiOperation({ summary: '修改用户信息' })
+    @ApiBearerAuth('authorization')
     @Post('/setting')
     @HttpCode(HttpStatus.OK)
     @UseGuards(AuthGuard())
@@ -84,6 +92,20 @@ import { UserOnlineService } from './user-online.service';
         return 'SUCCESS';
     }
 
+    @ApiOperation({ summary: '修改用户头像' })
+    @ApiBearerAuth('authorization')
+    @ApiConsumes('multipart/form-data')
+    @ApiBody({
+        schema: {
+        type: 'object',
+        properties: {
+            file: {
+            type: 'string',
+            format: 'binary',
+            },
+        },
+        },
+    })
     @Post('/avatar')
     @UseInterceptors(FileInterceptor('file'))
     @UseGuards(AuthGuard())
@@ -98,20 +120,22 @@ import { UserOnlineService } from './user-online.service';
         return true;
     }
 
+    @ApiOperation({ summary: '显示统计信息' })
+    @ApiBearerAuth('authorization')
     @Get('/statistic')
     @UseGuards(AuthGuard())
     async statistic(@GetUser() user: User) {
         const u = await this.userService.getStatistic(user.id);
         const result = { createDate: u.createDate, showname: u.showname, id: u.id, statistic: await u.statistic};
-        console.info('statistic result', result);
         return result;
     }
 
+    @ApiOperation({ summary: '在线人数' })
     @Get('/online/number')
     async onlineNumber() {
         const u = await this.userOnlineService.getOnlineNumber();
         return u;
     }
-  
+    
   }
   

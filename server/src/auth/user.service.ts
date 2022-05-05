@@ -3,11 +3,12 @@ import { UserRepository } from './user.repository';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './user.entity';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
-import { UserRole } from './auth.enum';
+import { EmailStatus, UserRole } from './auth.enum';
 import { GetUsersFilterDto } from './dto/get-users-filter.dto';
 import { CreateUserDto } from './dto/create-user.dto';
 import { Profile } from './profile.entity';
 import { ProfileRepository } from './profile.repository';
+import { MailerService } from '@nestjs-modules/mailer';
 
 import * as _ from 'lodash';
 import * as config from 'config';
@@ -19,6 +20,7 @@ export class UserService {
     @InjectRepository(UserRepository)
     private userRepository: UserRepository,
     private profileRepository: ProfileRepository,
+    private readonly mailerService: MailerService
   ) {}
 
   async getUserById(id: number): Promise<User> {
@@ -90,5 +92,11 @@ export class UserService {
   async getStatistic(id) {
     let found = await this.getUserById(id);
     return found;
+  }
+
+  async changeEmailStatus(id, status: EmailStatus) {
+    let found = await this.getUserById(id);
+    found.emailStatus = status;
+    this.userRepository.save(found);
   }
 }

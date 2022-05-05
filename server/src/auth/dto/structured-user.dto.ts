@@ -1,5 +1,5 @@
 import { User } from '../user.entity';
-import { UserRole } from '../auth.enum';
+import { EmailStatus, UserRole, UserStatus } from '../auth.enum';
 import { Photo } from '../../file/photo.entity';
 import { UserGender, UserShowStatusSetting } from '../user.enum';
 /**
@@ -12,6 +12,8 @@ export class StructuredUserDto {
     this.role = user.role;
     this.createDate = user.createDate;
     this.showname = user.showname;
+    this.status = user.status;
+    this.emailStatus = user.emailStatus;
     if(user.profile) {
       this.gender = user.profile.gender;
       this.avatar = user.profile.avatar;
@@ -52,6 +54,8 @@ export class StructuredUserDto {
   showCreatedCCP: UserShowStatusSetting;
   showFavourite: UserShowStatusSetting;
   showLikedUser: UserShowStatusSetting;
+  status: UserStatus;
+  emailStatus: EmailStatus;
 }
 
 export enum CollectType {

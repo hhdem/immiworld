@@ -17,13 +17,8 @@ export class PhotoRepository extends Repository<Photo> {
     if (user) {
       query.where('photo.user.id = :userId', { userId: user.id });
     }
-    query.leftJoinAndSelect('photo.ccp', 'ccp');
-    query.leftJoinAndSelect('photo.news', 'news');
     if (newsId) {
       query.andWhere('news.id = :newsId', { newsId });
-    }
-    if (ccpId) {
-      query.andWhere('ccp.id = :ccpId', { ccpId });
     }
 
     query.orderBy('photo.createDate', 'DESC');

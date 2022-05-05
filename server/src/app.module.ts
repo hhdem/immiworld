@@ -21,6 +21,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { OnlineMiddleware } from './common/online.middleware';
 import { UserOnlineService } from './auth/user-online.service';
 import { UserOnlineRepository } from './auth/user-online.repository';
+import { EmailModule } from './email/email.module';
 
 @Module({
   imports: [
@@ -52,6 +53,7 @@ import { UserOnlineRepository } from './auth/user-online.repository';
         new CookieResolver(['lang', 'locale', 'l']),
       ],
     }),
+    EmailModule,
   ],
   providers: [{
     provide: APP_GUARD,

@@ -20,7 +20,9 @@ import { join } from 'path';
 import * as _ from 'lodash';
 import { UploadService } from './upload.service';
 import { CommonService } from '../base/common.service';
+import { ApiBearerAuth, ApiBody, ApiConsumes, ApiOperation, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('图片')
 @Controller('up')
 @UseGuards(AuthGuard())
 export class UploadFileController {
@@ -33,6 +35,20 @@ export class UploadFileController {
    * @param file
    * @param body
    */
+   @ApiOperation({ summary: '上传单文件' })
+   @ApiBearerAuth('authorization')
+   @ApiConsumes('multipart/form-data')
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        file: {
+          type: 'string',
+          format: 'binary',
+        },
+      },
+    },
+  })
   @Post('/file')
   @UseInterceptors(FileInterceptor('file')) // file对应HTML表单的name属性
   uploadedFile(
@@ -47,6 +63,20 @@ export class UploadFileController {
    * @param file
    * @param body
    */
+   @ApiOperation({ summary: '上传多文件' })
+   @ApiBearerAuth('authorization')
+   @ApiConsumes('multipart/form-data')
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        files: {
+          type: 'string',
+          format: 'binary',
+        },
+      },
+    },
+  })
   @Post('/files')
   @UseInterceptors(FilesInterceptor('files'))
   async uploadedFiles(@UploadedFiles() files, @Body() body) {
@@ -74,6 +104,20 @@ export class UploadFileController {
    * @param file
    * @param body
    */
+   @ApiOperation({ summary: '上传Cover圖片' })
+   @ApiBearerAuth('authorization')
+   @ApiConsumes('multipart/form-data')
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        files: {
+          type: 'string',
+          format: 'binary',
+        },
+      },
+    },
+  })
   @Post('/cover')
   @UseInterceptors(
     FileFieldsInterceptor([
@@ -109,3 +153,4 @@ export class UploadFileController {
     });
   }
 }
+

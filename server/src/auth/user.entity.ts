@@ -7,7 +7,7 @@ import {
   OneToOne,
   JoinColumn,
 } from 'typeorm';
-import { UserStatus, UserRole } from './auth.enum';
+import { UserStatus, UserRole, EmailStatus } from './auth.enum';
 import { UserBase } from '../base/user.base.entity';
 import { Photo } from '../file/photo.entity';
 import { Profile } from './profile.entity';
@@ -21,6 +21,9 @@ export class User extends UserBase {
 
   @Column()
   status: UserStatus;
+
+  @Column({default: EmailStatus.INACTIVE})
+  emailStatus: EmailStatus;
 
   @OneToMany(
     () => Photo,

@@ -5,20 +5,31 @@ import { UserGender, UserShowStatusSetting } from '../user.enum';
 import * as bcrypt from 'bcryptjs';
 import { AuthCredentialsDto } from './auth-credentials.dto';
 import { Match } from '../decorator/match.decorator';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { EmailStatus } from '../auth.enum';
 
 export class CreateUserDto {
+
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   id: number;
 
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   showname: string;
 
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   @MinLength(4)
   @MaxLength(20)
   username: string;
 
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   @MinLength(6)
@@ -27,6 +38,8 @@ export class CreateUserDto {
   @Match('passwordConfirm', {message: '密码不匹配'})
   password: string;
 
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   @MinLength(4)
@@ -34,55 +47,75 @@ export class CreateUserDto {
   @Match('password', {message: '密码不匹配'})
   passwordConfirm: string;
 
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   oldPassword: string;
   
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsEnum(UserGender, {
     message: '无效的用户性別',
   })
   gender: UserGender;
 
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsEnum(UserShowStatusSetting, {
     message: '无效的顯示状态设置',
   })
   onlineStatus: UserShowStatusSetting;
 
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsEnum(UserShowStatusSetting, {
     message: '顯示加入的小組',
   })
   showJoinTeam: UserShowStatusSetting;
 
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsEnum(UserShowStatusSetting, {
     message: '顯示發佈的主題',
   })
   showPublishTopic: UserShowStatusSetting;
 
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsEnum(UserShowStatusSetting, {
     message: '顯示提交的CCP',
   })
   showCreatedCCP: UserShowStatusSetting;
 
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsEnum(UserShowStatusSetting, {
     message: '顯示收藏',
   })
   showFavourite: UserShowStatusSetting;
 
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsEnum(UserShowStatusSetting, {
     message: '顯示關注用戶',
   })
   showLikedUser: UserShowStatusSetting;
 
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsEmail()
   email: string;
 
+  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   mobile: string;
 
