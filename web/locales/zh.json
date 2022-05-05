@@ -1,0 +1,102 @@
+{
+  "common": {
+    "day": "天",
+    "hour": "小時",
+    "minute": "分鐘",
+    "second": "秒",
+    "home": "首頁",
+    "ago": "前",
+    "add": "新增",
+    "nodata": "无数据",
+    "processing": "處理中",
+    "close": "關閉",
+    "submit": "提交",
+    "success": "成功",
+    "sent":"已发送",
+    "validcode":"验证码",
+    "male":"男",
+    "female":"女",
+    "unknown":"未知"
+  },
+  "navbar":{
+    "country":"國家",
+    "consultant":"服務方",
+    "signup":"註冊",
+    "signin":"登錄"
+  },
+  "index": {
+    "add":"新增"
+  },
+  "footer":{
+    "docs":"文檔",
+    "about":"關於",
+    "joinus":"加入我們",
+    "online": "當前在線 {onlineNumber} 人",
+    "note": "❤ 爱代码, 更爱生活, 不废话就是干",
+    "todo": "待上线功能"
+  },
+  
+  "signin": {
+    "title": "登 錄",
+    "username": "郵件地址",
+    "password": "密碼",
+    "validcode": "验证码",
+    "slideright": "向右滑動",
+    "signin": "登錄"
+  },
+  "signup": {
+    "title": "註冊用戶",
+    "username_valid": "4-30位",
+    "password_valid": "6-20位,包含大小写",
+    "repassword": "確認密碼",
+    "signup": "登 錄"
+  },
+  "setting": {
+    "membernumber": "本站第 {number} 號會員",
+    "memberjointime": "加入時間",
+    "basicinfo": {
+      "basicinfo": "基本信息",
+      "avator": "頭像",
+      "showname": "用戶名",
+      "phone": "電話",
+      "email": "Email",
+      "gender": "性別"
+    },
+    "password": {
+      "password":"密碼",
+      "newpassword": "新密碼",
+      "reenternewpassword": "再次輸入新密碼",
+      "oldpassword": "原密碼"
+    },
+    "privacy": {
+      "online": { 
+        "status":"在線狀態",
+        "show":"顯示",
+        "notshow":"不顯示"
+      },
+      "jointeam": "顯示加入小組",
+      "topic": "顯示創建話題",
+      "ccp": "顯示創建CPP",
+      "favrite": { 
+        "status":"顯示收藏",
+        "show":"顯示",
+        "notshow":"不顯示"
+      },
+      "follow": "顯示關注列表"
+    },
+    "validmessage": {
+      "correcterrors": "请先修改下面的问题:",
+      "email": "请输入有效的邮箱地址",
+      "passwordNotMatch": "两次密码不相等",
+      "oldpasswordRequired": "请输入原密码"
+    }
+  },
+  "error":{
+    "404":"迷路了麼?"
+  },
+  "warnings":{
+    "nofunction":"功能未开启",
+    "mustinput":"請填入必填项及验证",
+    "accountandpassword":"請確認您輸入的帳號密碼"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "common": {
+    "day": "days",
+    "hour": "h",
+    "minute": "mins",
+    "second": "s",
+    "home": "Home",
+    "ago": "ago",
+    "add": "Add",
+    "nodata": "No data",
+    "processing": "Processing",
+    "close": "Close",
+    "submit": "Submit",
+    "success": "Success"
+  },
+  "navbar":{
+    "country":"Country",
+    "consultant":"Consultant",
+    "signup":"SignUp",
+    "signin":"SignIn"
+  },
+  "index":{
+    "add":"Create"
+  },
+  "footer":{
+    "docs":"Docs",
+    "about":"About",
+    "joinus":"Join Us",
+    "online": "Online {onlineNumber} users",
+    "note": "❤ Love Technology, Love Life, No nonsense, Just do it",
+    "todo": "Todo"
+  },
+  
+  "signin": {
+    "title": "Sign In",
+    "username": "Email",
+    "password": "Password",
+    "validcode": "Valid Code received",
+    "slideright": "Slide to right",
+    "signin": "Signin"
+  },
+  "signup": {
+    "title": "Sign Up",
+    "username_valid": "4-30 characters",
+    "password_valid": "6-20 characters, includes Upper and Downer",
+    "repassword": "Re-Password",
+    "signup": "Signup"
+  },
+  "setting": {
+    "membernumber": "No.{number} member",
+    "memberjointime": "join since",
+    "basicinfo": {
+      "avator": "Avator",
+      "showname": "Showname",
+      "phone": "Phone",
+      "email": "Email",
+      "gender": "Gender"
+    },
+    "password": {
+      "newpassword": "New password",
+      "reenternewpassword": "Re New password",
+      "oldpassword": "Old password"
+    },
+    "privacy": {
+      "online": "Online Status",
+      "jointeam": "Show joined Team",
+      "topic": "Show created topics",
+      "ccp": "Show created CCPs",
+      "favrite": "Show favrites",
+      "follow": "Show followed members"
+    },
+    "validmessage": {
+      "correcterrors": "Please correct the following error(s):",
+      "email": "Valid email required.",
+      "passwordNotMatch": "New Password not match",
+      "oldpasswordRequired": "Old Password required"
+    }
+  },
+  "error":{
+    "404":"You lost?"
+  },
+  "warnings":{
+    "nofunction":"Developing",
+    "mustinput":"Input requested",
+    "accountandpassword":"Wrong account."
+  }
+}
